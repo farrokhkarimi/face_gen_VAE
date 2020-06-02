@@ -10,7 +10,7 @@ Original file is located at
 
 This quick and concise tutorial covers the basics of Deep Generative Modelling with Variational Autoencoders. I am assuming that you are fairly familiar with the concepts of Convolutional Neural Networks and representation learning.
 
-This example demonstrates the process of building and training a VAE using Keras to generate new faces. We shall be using the [CelebA](https://www.kaggle.com/jessicali9530/celeba-dataset) dataset and Google Colab for training the VAE model.
+This example demonstrates the process of building and training a VAE using Keras to generate new faces. We shall be using the [CelebA](https://www.kaggle.com/jessicali9530/celeba-dataset) dataset and Google Colab for training the VAE model. You can run this project with Keras on Google [Colab](https://colab.research.google.com/github/farrokhkarimi/face_gen_VAE/blob/master/face_gen_VAE.ipynb).
 
 Also, please see Face Generation using GAN:
 https://github.com/farrokhkarimi/face_gen_GAN
@@ -184,11 +184,8 @@ Here, the Conv2DTranspose Layer is employed. This layer produces an output tenso
 decoder_input, decoder_output, decoder = build_decoder(input_dim = Z_DIM,
                                         shape_before_flattening = shape_before_flattening,
                                         conv_filters = [64,64,32,3],
-                                        con
-                                        
-                                        v_kernel_size = [3,3,3,3],
-                                        conv_strides = [2,2,2,2]
-                                        )
+                                        conv_kernel_size = [3,3,3,3],
+                                        conv_strides = [2,2,2,2])
 decoder.summary()
 
 """#### Attaching the Decoder to the Encoder"""
